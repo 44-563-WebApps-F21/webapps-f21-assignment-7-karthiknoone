@@ -16,6 +16,7 @@
     <button id="stack" onclick="stack()" style= color:teal;>Push value</button>
     <button id="popitem" onclick="popItem()" style=color:violet;>Pop</button>
     <button id="zap" onclick="zap()"style=color:orange;>Zap value</button>
+    <button id="uniqueHandler" onclick="uniqueHandler()" style=color:mediumblue>Unique</button>
     <br><br>
     <div class="flex-container" id="target">
         <div class="stack">row item 1</div>
@@ -59,6 +60,22 @@
             }
         }
         console.log("We are getting rid of all elements with " + input + "'")
+    }
+    function uniqueHandler() {
+        let stackItems = document.getElementsByClassName('stack');
+        length = stackItems.length;
+        for (let index = 0; index < length; index++) {
+            let element = stackItems[index].innerHTML;
+            for (let insideIndex = index + 1; insideIndex < length; insideIndex++) {
+                let elementInside = stackItems[insideIndex].innerHTML;
+                if (element == elementInside) {
+                    stackItems[insideIndex].remove();
+                    console.log("removed_element", stackItems)
+                    insideIndex--;
+                    index--;
+                }
+            }
+        }
     }
     </script>
     </html>
