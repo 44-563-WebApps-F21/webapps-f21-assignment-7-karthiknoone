@@ -24,7 +24,6 @@
 
     <div class="container">
         <div class="d-flex justify-content-center">
-
             <div><img src="plant.jpg" id="plant-0" onclick="check(0)" height="150" width="150" class="img-fluid"
                     alt="plant"></div>
             <div><img src="plant.jpg" id="plant-1" onclick="check(1)" height="150" width="150" class="img-fluid"
@@ -67,8 +66,6 @@
                     alt="plant"></div>
         </div>
         <div class="d-flex justify-content-center">
-
-
             <div><img src="plant.jpg" id="plant-18" onclick="check(18)" height="150" width="150" class="img-fluid"
                     alt="plant"></div>
             <div><img src="plant.jpg" id="plant-19" onclick="check(19)" height="150" width="150" class="img-fluid"
@@ -81,13 +78,12 @@
                     alt="plant"></div>
             <div><img src="plant.jpg" id="plant-23" onclick="check(23)" height="150" width="150" class="img-fluid"
                     alt="plant"></div>
-
         </div>
 
         <script>
             var triesCount = 0;
             var animalLocation = 13;
-            var holy_basil_array = ["plant-0", "plant-1", "plant-2", "plant-3", "plant-4", "plant-5", "plant-6",
+            var plant_array = ["plant-0", "plant-1", "plant-2", "plant-3", "plant-4", "plant-5", "plant-6",
                 "plant-7", "plant-8", "plant-9", "plant-10", "plant-11", "plant-12", "plant-13", "plant-14",
                 "plant-15", "plant-16", "plant-17", "plant-18", "plant-19", "plant-20", "plant-21", "plant-22",
                 "plant-23"];
@@ -106,7 +102,6 @@
                 let distance_of_forcast = distance(position, animalLocation);
                 document.getElementById("distance").innerHTML = "Distance from onclick element to animalLocation (13) : " + distance_of_forcast
             }
-
 
             function distance(pos1, pos2) {
                 console.log(pos1, pos2)
@@ -128,8 +123,19 @@
                 var animaldistance = Math.max(Math.abs(A2 - A1), Math.abs(B2 - B1));
                 return animaldistance;
             }
+            function reset() {
+                triesCount = 0;
+                animalLocation = Math.round(Math.random() * (23 - 0) + 0);
+                document.getElementById("tries").innerHTML = "Number of triesis zero";
+                distanceOfAnimal = "unknown"
+                document.getElementById("distance").innerHTML = "Distance is " + distanceOfAnimal;
+                for (var a = 0; a <= 23; a++) {
+                        document.getElementById(holy_basil_array[a]).src = "plant.jpg";
+                }
+
+        }
 
         </script>
 </body>
 
-</html>
+</html>=
